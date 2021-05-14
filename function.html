@@ -1,0 +1,60 @@
+<html>
+<head><title>
+Function
+</title></head>
+<body>
+<h1 align="center" style="color:red"><u>Function Basics</u></h1>
+<h2 style="color:red">Building Blocks of Programs</h2>
+<p><big>
+Functions like main, printf, scanf, we have already come through. All C programs made up of one or more functions. There must be one and only one main function. All functions are at the same level - there is no nesting.
+</big></p>
+<h2 style="color:red">Return Value</h2>
+<p><big>
+Including main and all functions can return a value.<br>Void return type is specified if function is returning no value. Functions can return arithmetic values (int, float, etc), pointers structures, unions, or will not return anything (void) But they cannot return an array or a function. 
+</big></p>
+<h2 style="color:red">Functions Parameters</h2>
+<p><big>
+Any function (as well as main) can receive some values called parameters. While calling a function we must pass values of parameters.
+</big></p>
+<p><big>
+Format of function:<br><return_type><function_name>(parameters...)<br>{ <br>}
+</big></p>
+<p><big>
+Only values of the parameters to the function at the time of calling it, if in definition of function contains void as parameter then function will not accept any parameter.
+</big></p>
+<p><big>
+Calling the expressions specified as arguments in a function call and the variables listed as parameters in the function definition is very usual. For example, in the following call of function, the expressions x and y*2 are the arguments passed to the function. The values of x and y will be copied into the parameters p and q. The variable given in the function definition are called as formal argument and the expression given in the function call are called as the actual argument.<br>cal_area(a,b*2);
+</big></p>
+<h1 align="center" style="color:red"><u>Definition and Declaration</u><h1>
+<h3>A function definition contains function name, parameters, its code and return type and a function declaration contains only name and return type.User can define a function only once but it can be declared several times.</h3>
+<h2 style="color:red">declaration of function</h2>
+<p><big>
+Syntax:<br><return_type><function_name>(arguments...);
+</big></p>
+<p><big>
+/*Declaration of area()*/
+</big></p>
+<p><big>
+int area(int x, int y);<br>int main()<br>{<br>}<br>int x=10, y=25;<br>printf("%d\n",area(x,y));<br>return 0;<br>}
+</big></p>
+<p><big>
+Definition of function:<br>syntax<br><return_types><function_name>(arguments)<br>{<br>Body of function;<br>}
+</big></p>
+<p><big>
+/*Definition of area()*/
+</big></p>
+<p><big>
+int area(int x, int y)<br>{<br>int z;<br>z=x*y;<br>return z;<br>}
+</big></p>
+<h1 align="center" style="color:red"><u>Standard Header Files</u></h1>
+<p><big>
+Standard header file contains prototypes of the library functions. For example, math.h contains prototypes for mathematical operations.
+</big></p>
+<p><big>
+Some standard header files are:<br><b>stdio.h</b>-printf, scanf, getchar, putchar, etc.<br><b>stdlib.h</b>-utility functins; number conversions, memory allocation, exit and system, quick sort.<br><b>float.h</b>-system limits for floating point types.<br><b>math.h</b>-mathematical functions<br><b>string.h</b>-string functions<br><b>assert.h</b>-assertions<br><b>ctype.h</b>-character class tests<br><b>time.h</b>-date and time functions<br><b>limits.h</b>-system limits for integral types<br><b>setjmp.h</b>-non-local jumps<br><b>signal.h</b>-signals and errror handling<br><b>stdarg.h</b>-variable length parameter lists
+</big></p>
+<p><big>
+Use the #include(preprocessor directive) and give angle brackets around the name of the file to include these standard header files in your program.
+</big></p>
+</body>
+</html>

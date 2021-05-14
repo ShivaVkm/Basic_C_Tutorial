@@ -1,0 +1,112 @@
+<html>
+<head><title>
+Flow of control
+</title></head>
+<body>
+<h1 align="center"style="color:red"><u>Conditional branching -if</u></h1>
+<h2 style="color:red">if statement</h2>
+<p><big>
+An if statement contains a Boolean expression and block of statements enclosed within braces.
+</big></p>
+<p><big>
+Structure of if statement:<br>if(boolean expression) /*if expression is true*/<br>statement... ; /*Execute statements*/<br>If the Boolean expression is true then statement block is executed otherwise (if false) program directly goes to next statement without executing statement block.
+</big></p>
+<h2 style="color:red">if...else statement</h2>
+<p><big>
+if statement block with else statement is known as if...else statement. Else portion is non-compulsory.
+</big></p>
+<p><big>
+Structure of if...else statement:<br>if(condition)<br>{<br>statements... ;<br>}<br>else<br>{<br>statements... ;<br>}<br>If the condition is true, then compiler will execute the if block of statements, if false then else block of statements will be executed.<br><b>We can use multiple if-else for inside other this is called as Nested if else statement.</b>
+</big></p>
+<h1 align="center" style="color:red"><u>Conditional selection - switch</u></h1>
+<h2 style="color:red">switch()</h2>
+<p><big>
+A switch statement is used instead of nested if...else statements. It is multiple branch decision statement of C. A switch statement tests a variable with list of values for equivalence. Each value is called a case.
+</big></p>
+<p><big>
+The case value must be a constant integer.
+</big></p>
+<p><big>
+Structure of switch statement:<br>switch(expression)<br>{<br>case value:statements... ;<br>case value:statements... ;<br>default:statements... ;<br>}
+</big ></p>
+<p><big>
+Individual case keyword and  a semi-colon(:) is used for each constant. Switch tool is used  for skipping to particular case, after jumping to that case it will execute all statements from cases beneath that case, this is called as "Fall Through".
+</big></p>
+<p><big>
+In the example below, for example, if the value 2 is entered, then then program will print two one something else!
+</big></p>
+<p><big>
+int main()<br>{<br>int i;<br>printf("Enter an integer:");<br>scanf("%d",&i);<br>switch(i)<br>{<br>case 4:printf("four");<br>break;<br>case 3:printf("three");<br>break;<br>case 2:printf("two");<br>case 1:printf("one");<br>default:printf("something else!");<br>}<br>return 0;<br>}
+</big></p>
+<p><big>
+To avoid fall through, the break statements are necessary to exit the switch. If value 4 is entered, then in case 4 it will just print four and ends the switch.
+</big></p>
+<p><big>
+The default label is non-compulsory, it is used for cases that are not present.
+</big></p>
+<h1 align="center" style="color:red"><u>Loops - while, do while & for</u></h1>
+<h2 style="color:red">while loop</h2>
+<p><big>
+The while loop calculates the expression before every loop. If the expression is true then block of statement is executed, so it will not execute if the condition is initially false. It needs the parenthesis like the if statement.
+</big></p>
+<p><big>
+while(expression) /*while expression is true do following*/<br>statements... ;
+<h2 style="color:red">do while loop</h2>
+</big></p>
+<p><big>
+This is equivalent to a while loop, but it has test condition at the end of the loop. The do while loop will always execute atleast once.
+</big></p>
+<p><big>
+do<br>statements;<br>while(expression); /*while expression is true do...*/
+</big></p>
+<h2 style="color:red">for loop</h2>
+<p><big>
+This is very widely held loop. For loops work like the corresponding while loop shown in the above example. The first expression is treated as a statement and executed, then the second expression is test or condition which is evaluated to see if the body of the loop should be executed. The third expression is incremented or decremented which is performed at the end of every iteration/repetition of the loop.
+</big></p>
+<p><big>
+for(expression1;expression2;expression3) OR (initialization;condition;flow)
+statements... ;
+</big></p>
+<p><big>
+In while loop it can happen that the statement will never execute, but in do-while loop, test condition is based at the end of loop therefore the block of statement will always execute at least once. This is the main difference between the while and the do-while loop. 
+</big></p>
+<p><big>
+For example, to execute a statement 5 times:<br>for(i=0;i<5;i++)<br>printf("%d\n",i);
+</big></p>
+<p><big>
+Another way of doing this is:<br>
+i=5;<br>while(i--)<br>statements;<br>While using this method, make sure that value of i is greater than zero, or make the test i-->0.
+</big></p>
+<h1 align="center" style="color:red"><u>Local Jumps goto</u></h1>
+<p><big>
+We can jump to any statement inside the same function using goto. To spot the end point of the jump a label (tag) is used. goto statement is not ideal to choose in any programming language because it makes difficult to trace the flow of a program, makes the program hard to understand, and to guess the output.
+</big></p>
+<p><big>
+void any_function(void)<br>{<br>for(...)<br>if(problem)goto error;<br>error:<br>solve problem<br>}</big></p>
+<p><big>But in the example above, remember that the code could be rewritten as:</big></p>
+<p><big>
+void function1(void)<br>{<br>for(...)<br>if(problem)<br>{<br>solve problem<br>return 0;<br>}<br>}
+</big></p>
+<h1 align="center" style="color:red"><u>Break and Continue</u></h1>
+<h2 style="color:red">break statement</h2>
+<p><big>
+break statement is usually used to terminate a case in the switch statement. Break statement in loops to instantly terminates the loop and program control goes to the next statement after the loop.
+</big></p>
+<p><big>
+If break statement is used in nested loops (i.e.,loop within another loop), the break statement will end the execution of the inner loop and program control goes back to outer loop.
+</big></p>
+<p><big>
+Syntax:<br>break;
+</big></p>
+<h2 style="color:red">Continue statement</h2>
+<p><big>
+In C programming language the continue statement works slightly similar to the break statement. The continue restarts the loop with the next value of item. All the line code below continue statement is skipped.
+</big></p>
+<p><big>
+Syntax:<br>continue;
+</big></p>
+<p><big>
+In the for loop, continue statement skips the test condition and increment value of the variable to execute again and in the while and do-while loops, continue skips all the statements and program control goes to at the end of loop for tests condition.
+</big></p>
+</body>
+</html>

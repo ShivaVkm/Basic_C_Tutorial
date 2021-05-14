@@ -1,0 +1,54 @@
+<html>
+<head><title>
+Input & Output
+</title></head>
+<body>
+<h1 align="center" style="color:red"><u>Formatted IO - printf & scanf</u></h1>
+<h2 style="color:red">Formatted Output - printf</h2>
+<p><big>
+It takes text and values from within the program and sends it out onto the screen.
+</big></p>
+<p><big>
+printf("%f is your weight\n",w);<br>In the above program statement:<br>"%f is your weight\n" is the control string w is the variable to be printed.<br>%f means that a floating point value is to be printed.<br>The number of conversion specifications and the number of variables following the control string must be same, and that the conversion character is correct for the type of the parameter.
+</big></p>
+<h2 style="color:red">Formatted Input - scanf</h2>
+<p><big>
+scanf is used to get input from user and to store it in the specified variable(s).<br>scanf("%d",&x);<br>read a decimal integer from the keyboard and store the value in the memory address of the variable x.
+</big></p>
+<h2 style="color:red">Character escape sequences</h2>
+<p><big>
+There are several character escape sequences which can be used in place of a character constant or within a string.
+</big></p>
+<p><big>
+<ul>
+<li>\a alert (bell)</li>
+<li>\b backspace</li>
+<li>\f formfeed</li>
+<li>\n newline</li>
+<li>\r carriage return</li>
+<li>\t tab</li>
+<li>\v vertical tab</li>
+<li>\ backslash</li>
+<li>\? question mark</li>
+<li>\' quote</li>
+<li>\" double quote</li>
+<li>\ooo character specified as an octal number</li>
+<li>\xhh character specified in hexadecimal</li>
+</ul>
+</big></p>
+<h1 align="center" style="color:red"><u>Character IO - getchar & putchar</u></h1>
+<p><big>
+getchar and putchar are used for the input or output only one character.
+</big></p>
+<p><big>
+getchar()<br>
+It returns an int which is either EOF (indicating End OF File) or the next character in the standard input stream.
+</big></p>
+<p><big>
+putchar(c)<br>puts the character on the output stream.
+</big></p>
+<p><big>
+int main()<br>{<br>int a;<br>a=getchar(); /*read and assign character to c*/<br>putchar(a); /*print c on the screen*/<br>return 0;<br>}
+</big></p>
+</body>
+</html>

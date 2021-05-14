@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head><title>
+Arrays, pointers & strings
+</title></head>
+<body>
+<h1 align="center" style="color:red"><u>Arrays</u></h1>
+<p><big>Array is a collection of similar data type items. Arrays are used to store group of data of same data type. Arrays can be of any datatype. Arrays must have constant size. Continuous memory locations are used to store array. Array index always starts with zero(0).</big></p>
+<p><big><b>Example for arrays:</b><br>int a[5]; // integer array<br>chara[5]; // character (string) array </big></p>
+<p><big><b>Types of arrays:</b><br><ul>
+<li>One Dimensional Array</li>
+<li>Two Dimensional Array</li>
+<li>Multi Dimensional Array</li>
+</ul></big></p>
+<h2  style="color:red">One Dimensional Array</h2>
+<p><big><b>Array declaration</b><br>int age[5];</big></p>
+<p><big><b>Array initialization</b><br>int age[5]={0, 1, 2, 3, 4, 5};</big></p>
+<p><big><b>Accessing array</b><br>age[0]; //0_is accessed<br>age[1]; //1_is accessed<br>age[2]; //2_is accessed</big></p>
+<h2  style="color:red">Two Dimensional Array</h2>
+<p><big>Two dimensional array is combination of rows and columns.<br><b>Array declaration</b><br>int arr[2][2];</big></p>
+<p><big><b>Array initialization</b><br>int arr[2][2]={{1,2},{3,4}};</big></p>
+<p><big><b>Accessing array</b><br>arr[0][0]=1;<br>arr[0][1]=2;<br>arr[1][0]=3;<br>arr[1][1]=4;</big></p>
+<h2  style="color:red">Multi Dimensional Array</h2>
+<p><big>
+C programming language allows programmer to create arrays of arrays known as multidimensional arrays.<br><b>For example:</b><br>float[2][4][3];
+<h3 style="color:red">Passing Array To Function</h3>
+<p>
+In C, we can pass entire arrays to functions as an argument.<br>For e.g.<br>#include"stdio.h"<br>void display(int a)<br>{<br>int i;<br>for(i=0;i<4;i++)<br>{<br>printf("%d",a[i]);<br>}<br>}<br>int main()<br>{<br>int c[]={1,2,3,4};<br>display(c); // Passing array to display.<br>return 0;<br>}</p>
+<h1 align="center" style="color:red"><u>Pointer</u></h1>
+<p>Pointer is a variable that stores the address of another variable. They can some things much easier, help improve your program's efficiency, and even allow you to handle unlimited amount of data. </p>
+<p>C Pointer is used to allocate memory dynamically that is at run time. The variable might be any of the data type such as int, float, char, double, short, etc.</p>
+<p><b>Syntax:</b> Pointers require a bit of new syntax because when you have a pointer, you need the ability to both request the memory location it stores and the value stored at that memory location.<br>data_type *ptr_name;</p>
+<p><b>Example:</b><br>int *a; char *a;<br>Where, * is used to denote that "a" is pointer variable and not a normal variable.</p>
+<p><b>Key points to remember about pointers in C:</b></p>
+<p><ul>
+<li>Normal variable stores the value whereas pointer variable stores the address of the variable.</li>
+<li>The content of C pointer always be a whole number that is address.</li>
+<li>Always C pointer is initialized to null that is int *p= null.</li>
+<li>The value of null pointer is zero(0).</li>
+<li>& symbol is used to get the address of the variable.</li>
+<li>* symbol is used to get the value of the variable that the pointer is pointing to.</li>
+<li>If pointer is assigned to NULL, it means it is pointing to nothing.</li>
+<li>Two pointers can be subtracted to know how many elements are available between these two pointers.</li>
+<li>But, pointer addition, multiplication and division are not allowed.</li>
+<li>The size of any pointer is 2 bytes (for 16-bit compiler).</li>
+</ul></p>
+<p><b>Example program for pointer in C:</b></p>
+<p>#include"stdio.h"<br>int main()<br>{<br>int *ptr, q;<br>q=50;<br>//address of q is assigned to ptr<br>ptr=&q;<br>//display q's value using ptr variable<br>printf("%d",*ptr);<br>return 0;<br>}</p>
+<h2 style="color:red">NULL Pointers</h2>
+<p>It is always a good practice to assign a NULL value to a pointer variable in case you do not have exact address to be assigned. This is done at the time of variable declaration. A pointer that is assigned a null is called a null pointer.Eg: int *ptr=NULL;<br>The value of pointer is 0 .</p>
+<h2 style="color:red">Pointer Arithmetic</h2>
+<p>As you understood pointer is an address which is a numeric value; therefore, you can perform arithmetic operations on a pointer just as you have a numeric value.<br>There are four arithmetic operators that can be used on pointers: ++, --,+ and - .</p>
+<p>Example:<br>ptr++;<br>ptr--;<br>ptr+21;<br>ptr-10;</p>
+<p>If a char pointer pointing to address 100 is incremented (ptr++) then it will point to memory address 101</p>
+<h2 style="color:red">Pointers vs Arrays<h2>
+<h4>
+<p>
+Pointers and arrays are strongly related. In fact, pointers and arrays are interchageable in many cases. For example, a pointer that points to the begining of an array can access that array by using either pointer arithmetic or array-style indexing.
+</p>
+<p>
+int main()<br>{<br>int var[3]={1,2,3};<br>int *ptr;<br>printf("%d\n",*ptr);<br>ptr++;<br>printf("%d\n",*ptr);<br>return 0;<br>}
+</p>
+<p>This code will return:<br>1<br>2
+</p>
+</h4>
+<h2 style="color:red">Pointer to Pointer</h2>
+<p>A pointer to a pointer is a form of multiple indirection or a chain of pointers. Normally, a pointer contains the address of a variable. When we define a pointer to a pointer, the first pointer contains the address of the second pointer, which points to the location that contains the actual value.<br>int main()<br>int var;<br>int *ptr;<br>int **pptr;<br>var=3000;<br>ptr= &var;<br>pptr= &ptr <br>printf("Value of var:%d\n",var);<br>printf("Value available at *ptr:%d\n",*ptr);<br>printf("Value available at **pptr:%d",**pptr);<br>return 0;<br>}</p>
+<p>This code will return :<br>Value of var:3000<br>Value available at *ptr:3000<br>Value available at **pptr:3000</p>
+<h1 align="center" style="color:red"><u>String</u></h1>
+<p>A string is simply an array of characters which is terminated by a null character "\0" which shows the end of the string.<br>Strings are always enclosed by double quotes. Whereas, character is enclosed by single quotes in C.</p>
+<p>The declaration and initialization create a string with the word "AKKI".<br>To hold the null character (\0) at the end of the array, is one more than the number of characters in the word "AKKI".</p>
+<p>char my_name[5]={'A','K','K','I','\0'};</p>
+<p>We can also write the above statement as follows:<br>char my_name[]="AKKI";</p>
+<p><b>C String functions:</b></p>
+<p>To use string functions, programmer must import string.h header file.<br>string.h header file supports all the string functions in C language.</p>
+<p>All the string functions are given below.<br><b><ol>
+<li>strcat():  Concatenates str2 at the end of str1.</li>
+<li>strncat():  appends a portion of string to another.</li>
+<li>strcpy():  Copies str2 into str1 .</li>
+<li>strncpy():  Copies given number of characters of one string to another.</li>
+<li>strlen():  Gives the length of of str1.</li>
+<li>strcmp():  Returns 0 if str1 is same as str2. Returns 0 if str1>str2.</li>
+<li>strcmpi():  Same as strcmp() function. But, this function negotiates case. "A" and "a" are treated as same.</li>
+<li>strchr():  Returns pointer to first occurence of char in str1.</li>
+<li>strrchr():  Last occurence of given character in a string is found.</li>
+<li>strstr():  Returns pointers to first occurence of str2 in str1.</li>
+<li>strrstr():  Returns pointer to last occurence of str2 in str1.</li>
+<li>strdup():  Duplicates the string.</li>
+<li>strlwr():  Converts string to lowercase.</li>
+<li>strupr():  Converts string to uppercase.</li>
+<li>strrev():  Reverses the given string.</li>
+<li>strset():  sets all character in a string to given character.</li>
+<li>strnset():  It sets the portion of characters in a string to given character.</li>
+<li>strtok():  Tokenizing given string using delimiter.</li>
+</ol></p>
+</body>
+</html>

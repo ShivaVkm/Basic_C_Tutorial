@@ -1,0 +1,23 @@
+<html>
+<head><title>
+Files
+</title></head>
+<body>
+<h1 align="center" style="color:red"><u>File Operations & Functions</u></h1>
+<h2 style="color:red">File Pointers</h2>
+<p><big>It is not enough to just display the data on the screen. We need to save it because memory is volatile and its content would be lost once program terminated, so if we need some data again there are two ways one is retype via keyboard to assign it to particular variable, and other is regenerate it via programmatically both the options are tedious. At such time it becomes necessary to store the data in a manner that can be later retrieved  and displayed either in part or in whole. This medium is usually a file on the disk.</big></p>
+<p><big>
+<b>
+Introduction to file
+</b><br> Until now we have been using the functions such as scanf, printf, getch, putch, etc. to read and write data on the variable abd arrays for storing data inside the programs. But this approach poses the following programs.<br>1. The data is lost when program terminated or variable goes out of scope.<br>2. Difficulty to use large volume of data.</big></p>
+<p><big>We can overcome these problems by storing data on secondary devices such as Hard Disk. The data is stored on the devices using the concept of file.<br> A file is a collection of related records, a record is composed of several fiels and field is a group of character.</big></p>
+<p><big>The most straight forward  use of file is via a file pointer.<br>FILE *fp;<br>fp is a pointer to a file.<br> The type FILE, is not a basic type, instead it is defined in the header file stdio.h, this file must be included in your program.</big></p>
+<h2 style="color:red">File operations</h2>
+<p><big>1. Create a new file<br>2. Open an existing file<br>3. Read from file<br>4. Write to a file<br>5. Moving a specific location in a file (Seeking)<br>6. Closing file</big></p>
+<h2 style="color:red">Opening a file</h2>
+<p><big>fp=fopen(filename, mode);<br>The filename and mode both are strings.</big></p>
+<p><big>Here modes can be <br>"r" read<br>"w" write,overwrite file if it exists<br>"a" write, but append instead of overwrite<br>"r+" read and writ, do not destroy life if it exists<br>"w+" read and write, but overwrite file if it exists<br>"a+" read and write, but append instead of overwrite<br>"b" may be appended to any of the above to force the file to be opened in binary mode rather than text mode.</big></p>
+<p><big>Eg.<br>FILE *fp;<br>fp=fopen("input.txt","r"); //opens input.txt file in read mode<br>fclose(fp); //close file</big></p>
+<p><big>Sequential file access is performed with the following library functions.<br>1. fopen() - create a new file<br>2. fclose() - close file<br>3. getc() - read character from file<br>4. putc() - write character to a file<br>5. getw() -read integer from file<br>6. putw() - write integer to a file<br>7. fprintf() - write set of data values<br>8. fscanf() - read set of data values </big></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head><title>
+Structure & Union
+</title></head>
+<body>
+<h1 align="center" style="color:red"><u>Structure</u></h1>
+<p><big>In array, we can store data of one type only, but structure is a variable that gives the fascility of storing data of different data type in one variable. Structures are variables that have several parts; each part of the object can have different types. Each part of the structure is called a member of the structure.</big></p>
+<h2 style="color:red">Declaration</h2>
+<p><big>Consider basic data of student:<br>roll_no., class, name, age, address.</big></p>
+<p><big>A structure data type called student can hold all this information:<br>struct student {<br>int roll_no.;<br>char class;<br>char name[25];<br>int age;<br>char address[50]; <br>};</big></p>
+<p><big>Before the final semi-colon, at the end of structure's definition, we can specify one or more structure variables.</big></p>
+<p><big>There is also another way of declaring variables given below,<br>struct student s1;</big></p>
+<h2 style="color:red">Initialization</h2>
+<p><big>Structures members can be initialized at declaration. This is same as the initialization of arrays; the values are listed inside the braces. The structure declaration is preceded by the keyword static.</big></p>
+<p><big>static struct student akki={1234,"comp","akki","20","mumbai"};</big></p>
+<h2 style="color:red">Accessing the structure data</h2>
+<p><big>To access a given member the dot notation is use. The "dot" is called the member accesss operator.</big></p>
+<p><big>struct student s1;<br>s1.name="Akki";<br>s1.roll_no=1234<;/big></p>
+<h2 style="color:red">Scope</h2>
+<p>A structure type declaration can be local or global,depending upon where the declaration is made.</p>
+<h1 align="center" style="color:red"><u>Union</u></h1>
+<p>C union is also like structure, i.e. collection of different data types which are grouped together. Each element in a union is called member.</p>
+<p>Union and structure both are same, except allocating memory, for their members. Structure allocates storage space for each member separately. Whereas union allocates one common storage space for all its members.</p>
+<p>Syntax:<br>
+union tag_name<br>{<br>data type var_name1;<br>data type var_name2;<br>data type var_name3;<br>};
+</p>
+<p>Example:<br>union student <br>{<br>int id;<br>char name[10];<br>char address[50];<br>};</p>
+<h2 style="color:red">Initializing and declaring union variable</h2>
+<p>union student data;<br>union student data={001,"AKKI","mumbai"};</p>
+<h2 style="color:red">Accessing union members</h2>
+<p>data.id<br>data.name<br>data.address</p>
+</body>
+</html>

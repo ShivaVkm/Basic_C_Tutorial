@@ -1,0 +1,54 @@
+<html>
+<head><title>
+Scope, Block & Variables
+</title></head>
+<body>
+<h1 align="center" style="color:red"><u>Blocks and Scope</u></h2>
+<p><big>
+C is a block structured language. Blocks are enclosed by { and }. Blocks can be defined wherever a C statement could be used. No semi-colon is required after the closing brace of a block.
+</big></p>
+<p><big><b>Variable Scope</b> refers to where variables is declared.</big></p>
+<h2 style="color:red">Global variables</h2>
+<p><big>
+Global variables are declared outside any function, usually at top of program. They can be used by later blocks of code:<br>int g;<br>int main(void)<br>{<br>g=0;<br>}
+</big></p>
+<h2 style="color:red">Local variables</h2>
+<p><big>
+Variables that are declared inside a function or block are called local variables. The scope of local variables will be within the function only. These variables are declared within the function and can't be accessed outside the function.<br>void main()<br>{<br>int g;<br>g=2;<br>printf("g=%d",&g);<br>}
+</big></p>
+<h1 align="center" style="color:red"><u>Variable Storage Classes</u></h2>
+<h2 style="color:red">auto</h2>
+<p><big>
+The default class. Automatic variables are local to their block. Their storage space is reclaimed on exit from the block.
+</big></p>
+<h2 style="color:red">register</h2>
+<p><big>
+If possible, the variable will be stored in a processor register. May give faster access to the variable. If register storage is not possible, then the variable will be of automatic class.<br>Use of register class is not recommended, as the compiler should be able to make better judgement about which variable to hold in registers, infact injudicious use of register variables may slow down the program.
+</big></p>
+<h2 style="color:red">static</h2>
+<p><big>
+On exit from block, static variables are not reclaimed. They keep their value. On re-entry to the block the variable will have its old value.
+</big></p>
+<h2 style="color:red">extern</h2>
+<p><big>
+Allows to access to external variables. An external variable is either a global variable or a variable defined in another source file. External variables are defined outside of any function. (Note:Variables passed to a function and modified by way of a ponter are not external variables)
+</big></p>
+<h2 style="color:red">static external</h2>
+<p><big>
+External variables can be accessed by any function in any source file which make up the final program. Static external variables can only be accessed by functions in the same file as the variable declaration.
+</big></p>
+<h1 align="center" style="color:red"><u>Definition & Declaration</u></h2>
+<p><big><b>Definition</b> is the place where variable is created (allocated storage0.</big></p>
+<p><big><b>Declaration</b> is a place where nature (type) of variable is stated, but no storage is allocated.</big></p>
+<p><big><b>Initialization</b> means assigning a value to the variable.</big></p>
+<p><big>Variables can be declared many times, but defined only once. Memory space is not allocated for a variable while declaration. It happens only on variable definition.</big></p>
+<p><big><b>Variable declaration</b><br>syntax:<br>data_type variable_name;<br><b>example:</b><br>int a,b,c;<br>char flag;</big></p>
+<p><big><b>Variable Initialization</b><br>syntax:<br>data_type variable_name = value;<br><b>example:</b><br>int a=50;<br>char flag ='t';</big></p>
+<h1 align="center" style="color:red"><u>Initialization of Variables</u></h2>
+<p><big><b>Initialization</b> means assigning a value to the variable.<br>If variables are not explicitly initialized, then external and static variables are initialized to zero; pointers are initialized to NULL; auto and register variables have undefined value.</big></p>
+<p><big>int x=1;<br>char quote="\";<br>long day = 60*24;<br>int len = strlen(s);</big></p>
+<h3><b>external and static initialization done only once.</b></h3>
+<h3><b>auto and register initialization done each time block is entered.</b></h3>
+<h3><b>external and static variables cannot be initialized with a value that is not known until run-time; the initialiser must be a constant expression.</h3></p>
+</body>
+</html>
